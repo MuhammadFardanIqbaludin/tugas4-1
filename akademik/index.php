@@ -22,14 +22,17 @@
             <th>No</th>
             <th>Nim</th>
             <th>Nama</th>
+            <th>Progdi</th>
         </tr>
         <?php while($d = mysqli_fetch_array($data)){?>
         <tr>
             <td><?=$no++?></td>
             <td><?=$d['nim']?></td>
             <td><?=$d['nama']?></td>
+            <td><?=$d['prodi']?></td>
         </tr>
         <?php } ?>
     </table>
+    <a href="./json.php">JSON File</a>
 </body>
 </html>
