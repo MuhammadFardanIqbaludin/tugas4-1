@@ -1,5 +1,5 @@
 <?php
-class crud extends CI_Model {
+class Crud extends CI_Model {
 	public function insert($table, $data = array())
 	{
 		if (isset($data)) {

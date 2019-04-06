@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$c = curl_init();
-		curl_setopt($c, CURLOPT_URL, "http://localhost/ci/api/posyandu");
+		curl_setopt($c, CURLOPT_URL, "http://dimasarz.000webhostapp.com/ci/api/posyandu");
 		curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
 		curl_setopt($c, CURLOPT_HEADER, FALSE);
@@ -34,7 +34,7 @@ class Home extends CI_Controller {
 			];
 
 			$c = curl_init();
-			curl_setopt($c, CURLOPT_URL, "http://localhost/ci/api/posyandu/add");
+			curl_setopt($c, CURLOPT_URL, "http://dimasarz.000webhostapp.com/ci/api/posyandu/add");
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
 			curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
 			curl_setopt($c, CURLOPT_HEADER, FALSE);
@@ -42,9 +42,7 @@ class Home extends CI_Controller {
 			curl_setopt($c, CURLOPT_POST, TRUE);
 			curl_setopt($c, CURLOPT_POSTFIELDS, http_build_query($param));
 
-			$data = curl_exec($c);
-
- 			header('location:'.base_url());
+			redirect(base_url(), 'refresh');
 		}
 
 		$this->load->view('master',['page' => 'add']);
@@ -67,7 +65,7 @@ class Home extends CI_Controller {
 			];
 
 			$c = curl_init();
-			curl_setopt($c, CURLOPT_URL, "http://localhost/ci/api/posyandu/edit");
+			curl_setopt($c, CURLOPT_URL, "http://dimasarz.000webhostapp.com/ci/api/posyandu/edit");
 			curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
 			curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
 			curl_setopt($c, CURLOPT_HEADER, FALSE);
@@ -83,7 +81,7 @@ class Home extends CI_Controller {
 		}
 
 		$c = curl_init();
-		curl_setopt($c, CURLOPT_URL, "http://localhost/ci/api/posyandu?id=$id");
+		curl_setopt($c, CURLOPT_URL, "http://dimasarz.000webhostapp.com/ci/api/posyandu?id=$id");
 		curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
 		curl_setopt($c, CURLOPT_HEADER, FALSE);
@@ -104,7 +102,7 @@ class Home extends CI_Controller {
 		$id = $this->uri->segment(3);
 
 		$c = curl_init();
-		curl_setopt($c, CURLOPT_URL, "http://localhost/ci/api/posyandu/delete?id=$id");
+		curl_setopt($c, CURLOPT_URL, "http://dimasarz.000webhostapp.com/ci/api/posyandu/delete?id=$id");
 		curl_setopt($c, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($c, CURLOPT_FOLLOWLOCATION, TRUE);
 		curl_setopt($c, CURLOPT_HEADER, FALSE);
