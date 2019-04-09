@@ -1,2 +1,0 @@
-# webserv
-tugas kuliah
